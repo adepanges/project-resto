@@ -57,7 +57,7 @@ class Resto_Controller extends CI_Controller {
 
                 default:
                     # web
-                    redirect('auth/log/out')
+                    redirect('auth/log/out');
                     break;
             }
             exit;
