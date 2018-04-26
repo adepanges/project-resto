@@ -272,7 +272,8 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
-	$view_folder = FCPATH.'resources/views';
+    $view_folder = '';
+	// $view_folder = FCPATH.'resources/views';
 
 	// The path to the "views" directory
 	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))

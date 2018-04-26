@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="white-box">
-                        <table id="UserTable" class="table">
+                        <table id="dataTableComponent" class="table">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -71,9 +71,7 @@
                                     <th>Status</th>
                                     <th>
                                         Action
-                                        @if($access_list->sso_users_add)
-                                            <button onclick="addUser()" style="margin-left: 4px;" type="button" class="btn btn-success btn-circle btn-sm m-r-5"><i class="ti-plus"></i></button>
-                                        @endif
+                                            <button onclick="add()" style="margin-left: 4px;" type="button" class="btn btn-success btn-circle btn-sm m-r-5"><i class="ti-plus"></i></button>
                                     </th>
                                 </tr>
                             </thead>
@@ -83,14 +81,14 @@
             </div>
             <!-- .row -->
 
-            <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+            <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title" id="exampleModalLabel1">User</h4> </div>
                         <div class="modal-body">
-                            <form id="userForm" data-toggle="validator" data-delay="100">
+                            <form id="FormData" data-toggle="validator" data-delay="100">
                                 <input type="hidden" name="user_id">
                                 <div class="form-group">
                                     <label for="recipient-name" class="control-label">Username</label>
@@ -132,7 +130,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                            <button id="btnSaveUserModal" type="button" class="btn btn-primary">Simpan</button>
+                            <button id="btnSaveFormData" type="button" class="btn btn-primary">Simpan</button>
                         </div>
                     </div>
                 </div>

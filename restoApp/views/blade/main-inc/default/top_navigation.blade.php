@@ -7,9 +7,9 @@
                     <a class="logo" href="{{ base_url() }}">
                         <span class="hidden-xs">
                             <!--This is dark logo text-->
-                            <img src="{{ base_url('images/logo/dermeva_logo_205x41.png') }}" alt="home" class="dark-logo" />
+                            <img src="{{ base_url('images/logo/logo.png') }}" alt="home" class="dark-logo" width="80px" />
                             <!--This is light logo text-->
-                            <img src="{{ base_url('images/logo/dermeva_logo_205x41.png') }}" alt="home" class="light-logo" />
+                            <img src="{{ base_url('images/logo/logo.png') }}" alt="home" class="light-logo" width="80px" />
                          </span>
                      </a>
                 </div>
@@ -39,12 +39,8 @@
                                 <div class="dw-user-box">
                                     <div class="u-text">
                                         <p class="text-muted">Switch Role</p>
-                                        @foreach ($role as $key => $value)
-                                            <p class="role_option">{{ $value['franchise_name'] }}</p>
-                                                @foreach ($value['role'] as $key => $value_role)
-                                                    <a class="role_option_detail btn" onclick="window.location = '{{ base_url('sso.php/auth/init/index/switch_role/'.$value_role['chipper_user_role_id']) }}'">{{ $value_role['role_label'] }}</a>
-                                                @endforeach
-                                            <hr>
+                                        @foreach ($role as $key => $value_role)
+                                            <a class="role_option_detail btn" onclick="window.location = '{{ base_url('sso.php/auth/init/index/switch_role/'.md5($value_role['role_id'])) }}'">{{ $value_role['role_label'] }}</a>
                                         @endforeach
                                     </div>
                                 </div>

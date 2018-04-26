@@ -99,18 +99,15 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="white-box">
-                        <table id="RoleTable" class="table">
+                        <table id="dataTableComponent" class="table">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Role Name</th>
-                                    <th>Franchise</th>
                                     <th>Created At</th>
                                     <th>
                                         Action
-                                        @if($access_list->sso_users_role_add)
-                                            <button onclick="addRole()" style="margin-left: 4px;" type="button" class="btn btn-success btn-circle btn-sm m-r-5"><i class="ti-plus"></i></button>
-                                        @endif
+                                        <button onclick="add()" style="margin-left: 4px;" type="button" class="btn btn-success btn-circle btn-sm m-r-5"><i class="ti-plus"></i></button>
                                     </th>
                                 </tr>
                             </thead>
@@ -120,7 +117,7 @@
             </div>
             <!-- .row -->
 
-            <div class="modal fade" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+            <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -128,7 +125,7 @@
                             <h4 class="modal-title" id="exampleModalLabel1">Role</h4>
                         </div>
                         <div class="modal-body">
-                            <form id="roleForm" data-toggle="validator" data-delay="100">
+                            <form id="FormData" data-toggle="validator" data-delay="100">
                                 <input type="hidden" name="user_id">
                                 <div class="form-group">
                                     <label for="recipient-name" class="control-label">Role</label>
@@ -140,17 +137,11 @@
                                     </select>
                                     <div class="help-block with-errors"></div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="control-label">Franchise</label>
-                                    <select class="form-control" name="franchise_id">
-                                        <option value="1" selected>Dermeva Kosmetik Indonesia</option>
-                                    </select>
-                                </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                            <button id="btnSaveRoleModal" type="button" class="btn btn-primary">Simpan</button>
+                            <button id="btnSaveFormData" type="button" class="btn btn-primary">Simpan</button>
                         </div>
                     </div>
                 </div>

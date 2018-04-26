@@ -15,9 +15,10 @@ Class Blade {
     {
 
         $path = [
-            FCPATH.'resources/views/blade/'
+
+            APPPATH.'views/blade/'
         ];
-        $cachePath = FCPATH.'resources/cache/blade/';
+        $cachePath = APPPATH.'cache/blade/';
 
         $file = new Filesystem;
         $compiler = new BladeCompiler($file, $cachePath);

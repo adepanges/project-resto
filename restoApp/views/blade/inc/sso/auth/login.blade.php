@@ -6,7 +6,7 @@
                     <form class="form-horizontal form-material" method="POST" action="{{ site_url('auth/log/validate/web') }}">
                         <input type="hidden" name="auth_access_key" value="{{ $auth_access_key }}">
                         <a href="javascript:void(0)" class="text-center db">
-                            <img src="{{ base_url('images/logo/dermeva_logo_205x41.png') }}" alt="Home" />
+                            <img src="{{ base_url('images/logo/logo.png') }}" alt="Home" width="200px"/>
                         </a>
 
                         @if (isset($error_message) && !empty($error_message))
