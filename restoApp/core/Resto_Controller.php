@@ -57,7 +57,7 @@ class Resto_Controller extends CI_Controller {
 
                 default:
                     # web
-                    $this->blade->view('error/403');
+                    redirect('auth/log/out')
                     break;
             }
             exit;
