@@ -10,6 +10,16 @@
                                 <span class="hide-menu">User</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ site_url('product') }}">
+                                <span class="hide-menu">Product</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ site_url('table') }}">
+                                <span class="hide-menu">Table</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

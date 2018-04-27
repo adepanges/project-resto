@@ -21,7 +21,7 @@ class Log extends Resto_Controller {
             'error_message' => ''
         ];
         $this->session->set_userdata($session_data);
-        $this->blade->view('inc/sso/auth/login', $this->data);
+        $this->blade->view('inc/auth/login', $this->data);
 	}
 
     public function out()

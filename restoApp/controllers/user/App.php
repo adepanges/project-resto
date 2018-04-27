@@ -13,7 +13,7 @@ class App extends Resto_Controller {
             'title' => 'Management User',
             'active_role' => $role_active
         ]);
-        $this->blade->view('inc/sso/user/app', $this->data);
+        $this->blade->view('inc/admin/user/app', $this->data);
 	}
 
     public function save()

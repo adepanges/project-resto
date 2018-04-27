@@ -34,7 +34,7 @@
 
 @section('header')
 @include('main-inc.default.top_navigation')
-@include('main-inc.default.sso_sidebar')
+@include('main-inc.default.admin_sidebar')
 @endsection
 
 @section('content')

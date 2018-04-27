@@ -22,12 +22,12 @@
         <script src="{{ base_url('plugins/bower_components/switchery/dist/switchery.min.js') }}"></script>
         <script src="{{ base_url('js/validator.js') }}"></script>
 
-        <script src="{{ base_url('js/module/sso/user.js') }}" type="text/javascript"></script>
+        <script src="{{ base_url('js/module/admin/user.js') }}" type="text/javascript"></script>
 @endsection
 
 @section('header')
 @include('main-inc.default.top_navigation')
-@include('main-inc.default.sso_sidebar')
+@include('main-inc.default.admin_sidebar')
 @endsection
 
 @section('content')

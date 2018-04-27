@@ -6,15 +6,10 @@ class Get extends Resto_Controller {
 	public function index()
 	{
         $this->_restrict_access('rest');
-        $this->load->model('user_model');
+        $this->load->model('product_model');
 
-        $params = [
-            'role_id' => (int) $this->input->post('role_id'),
-            'from' => $this->input->post('from')
-        ];
-
-        $this->user_model->set_datatable_param($this->_datatable_param());
-        $user_data = $this->user_model->get_datatable($params);
+        $this->product_model->set_datatable_param($this->_datatable_param());
+        $user_data = $this->product_model->get_datatable();
 
         $this->_response_json([
             'recordsFiltered' => $user_data['total'],
@@ -29,8 +24,8 @@ class Get extends Resto_Controller {
 
         if($user_id)
         {
-            $this->load->model('user_model');
-            $data = $this->user_model->get_byid($user_id);
+            $this->load->model('product_model');
+            $data = $this->product_model->get_byid($user_id);
         }
         $this->_response_json($data);
     }
