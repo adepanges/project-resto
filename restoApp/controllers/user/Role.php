@@ -2,6 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Role extends Resto_Controller {
+
+    function __construct()
+    {
+        parent::__construct();
+        if($this->role_active['role_id'] != 1)
+        {
+            redirect();
+        }
+    }
+
 	public function index($user_id = 0)
 	{
         $this->_restrict_access('web');
@@ -21,7 +31,7 @@ class Role extends Resto_Controller {
             'user' => $data,
             'active_role' => $role_active
         ]);
-        $this->blade->view('inc/sso/user/role', $this->data);
+        $this->blade->view('inc/admin/user/role', $this->data);
 	}
 
     function get($id = 0)

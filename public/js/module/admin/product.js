@@ -50,7 +50,7 @@ $(document).ready(function(){
                 { data: "name" },
                 { data: "type" },
                 {
-                    data: "price",
+                    data: "unit_price",
                     render: function ( data, type, full, meta ) {
                         return rupiah(data);
                     }

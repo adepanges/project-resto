@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-md-12 white-box" id="filterSection">
                     <div class="col-md-2 pull-right">
-                        <button class="btn btn-info form-control" onclick="userTable.ajax.reload()">Filter</button>
+                        <button class="btn btn-info form-control" onclick="dataTableComponent.ajax.reload()">Filter</button>
                     </div>
                     <div class="col-md-2 pull-right">
                         <select name="role_id" class="form-control input-md">

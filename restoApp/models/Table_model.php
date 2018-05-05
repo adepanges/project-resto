@@ -22,6 +22,14 @@ class Table_model extends Resto_Model {
         ];
     }
 
+    function get_active()
+    {
+        return $this->db->query("SELECT a.*, b.order_id, b.is_active, b.customer_name
+            FROM `table` a
+            LEFT JOIN orders b ON a.table_id = b.table_id AND b.is_deleted = 0 AND b.is_active = 1
+            WHERE a.status = 1");
+    }
+
     function get_byid($id)
     {
         return $this->db->where('table_id', ((int) $id))->get($this->table)->row();

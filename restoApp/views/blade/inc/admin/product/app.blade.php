@@ -86,7 +86,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-name" class="control-label">Harga</label>
-                                    <input type="number" class="form-control" name="price" data-error="Hmm, harga harap diisi" required>
+                                    <input type="number" class="form-control" name="unit_price" data-error="Hmm, harga harap diisi" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">

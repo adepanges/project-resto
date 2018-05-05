@@ -24,7 +24,7 @@
 
 
 
-        <script src="{{ base_url('js/module/sso/role.js') }}" type="text/javascript"></script>
+        <script src="{{ base_url('js/module/admin/role.js') }}" type="text/javascript"></script>
         <script type="text/javascript">
             user_role = {
                 user_id: {{ $user->user_id }}

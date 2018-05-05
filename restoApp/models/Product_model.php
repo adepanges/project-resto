@@ -5,8 +5,8 @@ class Product_model extends Resto_Model {
     protected
         $datatable_param = NULL,
         $table = 'product',
-        $orderable_field = ['name','type','price'],
-        $fillable_field = ['name','type','price','status'],
+        $orderable_field = ['name','type','unit_price'],
+        $fillable_field = ['name','type','unit_price','status'],
         $searchable_field = ['name','type'];
 
     function get_datatable($params = [])
@@ -20,6 +20,11 @@ class Product_model extends Resto_Model {
             'row' => $this->db->query($sql_user)->result(),
             'total' => $this->db->query($sql_count)->row()->count
         ];
+    }
+
+    function get_active()
+    {
+        return $this->db->where('status', 1)->get($this->table);
     }
 
     function get_byid($id)

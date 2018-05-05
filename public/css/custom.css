@@ -9,36 +9,27 @@ table.dataTable tbody td {
     opacity: 1;
 }
 
-code.catch {
-    cursor: pointer;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+.side-tables {
+    margin-right: 5px;
 }
 
-.delete_cart {
-    color: #F00;
-    cursor: pointer;
-    margin-right: 10px;
+.side-tables.table-onserve {
+    background-color: #fcc66a !important;
 }
 
-.double_side {
-    line-height: 1.8;
+.side-prouct {
+    height: 150px;
+    margin-bottom: 2px;
 }
 
-.role_option {
-    margin-left: 5px;
+.container-product {
+    margin-bottom: 15px;
 }
 
-.role_option_detail {
-    margin-left: 10px;
+.harga {
+    color: #00BB27;
 }
 
-#informationSection div {
-    border-right: 1px solid #000;
-}
-
-#informationSection div h3 {
-    text-align: center;
+.type-product {
+    font-size: 10px;
 }

@@ -6,10 +6,19 @@ class App extends Resto_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->_restrict_access('web');
     }
 
 	public function index()
 	{
-        redirect('user');
+        switch ($this->role_active['role_id']) {
+            case 1:
+                redirect('user');
+                break;
+
+            default:
+                redirect('orders');
+                break;
+        }
 	}
 }

@@ -2,6 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class App extends Resto_Controller {
+
+    function __construct()
+    {
+        parent::__construct();
+        if($this->role_active['role_id'] != 1)
+        {
+            redirect();
+        }
+    }
+
 	public function index()
 	{
         $this->_restrict_access('web');
@@ -24,7 +34,7 @@ class App extends Resto_Controller {
         $data = [
             'name' => $this->input->post('name'),
             'type' => $this->input->post('type'),
-            'price' => $this->input->post('price'),
+            'unit_price' => $this->input->post('unit_price'),
             'status' => (int) $this->input->post('status')
         ];
 
