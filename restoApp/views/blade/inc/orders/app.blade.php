@@ -35,7 +35,7 @@
                     $cls_active = 'table-onserve';
                 }
                 ?>
-                <div class="col-xs-6">
+                <div class="col-xs-6 col-md-4 col-lg-3">
                     <div class="white-box side-tables {{ $cls_active }}">
                         <h1>{{ $value->code }}</h1>
                         <b>{{ $value->name }}</b>

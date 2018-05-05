@@ -6,7 +6,7 @@ class Cart extends Resto_Controller {
     function __construct()
     {
         parent::__construct();
-        if($this->role_active['role_id'] != 4)
+        if(!in_array($this->role_active['role_id'], [3,4]))
         {
             redirect();
         }
@@ -18,7 +18,10 @@ class Cart extends Resto_Controller {
         $this->load->model(['orders_model','orders_cart_model']);
 
         $orders = $this->orders_model->get_byid((int) $order_id);
-        if(empty($orders)) redirect('orders');
+        if(
+            empty($orders) ||
+            (isset($orders->is_active) && $orders->is_active == 0)
+        ) redirect('orders');
 
         $this->_set_data([
             'title' => 'Cart',
@@ -27,6 +30,33 @@ class Cart extends Resto_Controller {
         ]);
         $this->blade->view('inc/orders/cart', $this->data);
 	}
+
+    public function checkout()
+    {
+        $this->_restrict_access('rest');
+        $order_id = (int) $this->input->post('order_id');
+
+        $this->load->model('orders_model');
+        $this->orders_model->upt_total_price($order_id);
+        $res = $this->orders_model->upd([
+            'is_active' => 0,
+        ], $order_id);
+
+        if($res)
+        {
+            $this->_response_json([
+                'status' => 1,
+                'message' => 'Berhasil checkout pesanan'
+            ]);
+        }
+        else
+        {
+            $this->_response_json([
+                'status' => 0,
+                'message' => 'Gagal checkout pesanan'
+            ]);
+        }
+    }
 
     public function save()
     {

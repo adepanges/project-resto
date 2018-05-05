@@ -6,7 +6,7 @@ class App extends Resto_Controller {
     function __construct()
     {
         parent::__construct();
-        if($this->role_active['role_id'] != 4)
+        if(!in_array($this->role_active['role_id'], [3,4]))
         {
             redirect();
         }

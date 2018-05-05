@@ -2,10 +2,10 @@ function pesanProduct(json_product){
     var qty = prompt("Berupa jumlah yang dipesan", 1);
     data = JSON.parse(atob(json_product));
     data.qty = qty;
-
+    
     swal({
         title: "Apakah anda yakin?",
-        text: `memesan ${json_product.name} dengan jumlah ${qty}`,
+        text: `memesan ${data.name} dengan jumlah ${qty}`,
         type: "warning",
         showCancelButton: true,
         confirmButtonClass: "btn-danger",
