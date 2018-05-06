@@ -26,6 +26,7 @@ class Cart extends Resto_Controller {
         $this->_set_data([
             'title' => 'Cart',
             'orders' => $orders,
+            'role_active' => $this->role_active,
             'cart' => $this->orders_cart_model->get_by_orderid($order_id)->result()
         ]);
         $this->blade->view('inc/orders/cart', $this->data);

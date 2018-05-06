@@ -68,9 +68,12 @@
             </div>
 
             <div class="row">
+                @if ($role_active['role_id'] == 3)
                 <div class="col-xs-12 col-md-6">
                     <button class="btn btn-success form-control" onclick="bayarPesanan()">Bayar</button>
                 </div>
+                @endif
+
                 <div class="col-xs-12 col-md-6">
                     <button class="btn btn-info form-control" onclick="window.location = '{{ site_url('orders/product/index/'.$orders->order_id) }}'">Tambah</button>
                 </div>
