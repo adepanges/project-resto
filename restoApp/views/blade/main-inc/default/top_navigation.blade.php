@@ -7,9 +7,9 @@
                     <a class="logo" href="{{ base_url() }}">
                         <span class="hidden-xs">
                             <!--This is dark logo text-->
-                            <img src="{{ base_url('images/logo/logo.png') }}" alt="home" class="dark-logo" width="80px" />
+                            <img src="{{ base_url('images/logo/logo.jpeg') }}" alt="home" class="dark-logo" width="80px" />
                             <!--This is light logo text-->
-                            <img src="{{ base_url('images/logo/logo.png') }}" alt="home" class="light-logo" width="80px" />
+                            <img src="{{ base_url('images/logo/logo.jpeg') }}" alt="home" class="light-logo" width="80px" />
                          </span>
                      </a>
                 </div>

@@ -20,8 +20,12 @@ class Cetak extends Resto_Controller {
         $orders = $this->orders_model->get_byid((int) $order_id);
         $this->_set_data([
             'orders' => $orders,
-            'cart' => $this->orders_cart_model->get_by_orderid($order_id)->result()
+            'orders_cart' => $this->orders_cart_model->get_by_orderid($order_id)->result()
         ]);
-        $this->blade->view('inc/orders/cart', $this->data);
+        
+        // dd($this->data['orders_cart']);
+        // exit;
+
+        $this->blade->view('cetak/struk', $this->data);
 	}
 }

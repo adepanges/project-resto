@@ -92,13 +92,13 @@ $(document).ready(function(){
                     showCancelButton: true,
                     confirmButtonClass: "btn-danger",
                     confirmButtonText: "Cetak",
-                    cancelButtonText: "Tidak",
+                    cancelButtonText: "Tutup",
                     closeOnConfirm: false,
                     closeOnCancel: true
                 },
                 function(isConfirm) {
                     if (isConfirm) {
-                        console.log('cetak')
+                        window.open(document.app.site_url+'/orders/cetak/struk/'+data.order_id);
                     } else {
                         document.location.reload()
                     }
