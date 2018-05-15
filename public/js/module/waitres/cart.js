@@ -58,7 +58,7 @@ $(document).ready(function(){
         if(formValidator('#FormData')){
             var data = serialzeForm('#FormData');
 
-            if(data.kembalian < 0)
+            if(data.refund < 0)
             {
                 alert('harap diisi jumlah uang dengan valid');
                 return;
@@ -82,15 +82,26 @@ $(document).ready(function(){
                     showConfirmButton = true;
                 } else {
                     $('#FormData')[0].reset()
-                    document.location.reload()
                     $('#formModal').modal('toggle')
                 }
 
                 swal({
                     title: title,
                     text: response.message,
-                    timer: timer,
-                    showConfirmButton: showConfirmButton
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Cetak",
+                    cancelButtonText: "Tidak",
+                    closeOnConfirm: false,
+                    closeOnCancel: true
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
+                        console.log('cetak')
+                    } else {
+                        document.location.reload()
+                    }
                 });
             });
         }

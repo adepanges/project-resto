@@ -99,12 +99,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-name" class="control-label">Jumlah Uang</label>
-                                    <input type="number" class="form-control" id="jumlah_uang" value="0" data-error="Hmm, harap diisi jumlah uang dengan valid" required>
+                                    <input type="number" class="form-control" name="pay" id="jumlah_uang" value="0" data-error="Hmm, harap diisi jumlah uang dengan valid" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-name" class="control-label">Kembalian</label>
-                                    <input type="number" class="form-control" min-value="0" value="0" name="kembalian" id="kembalian" data-error="Hmm, harap diisi jumlah uang dengan valid" readonly required>
+                                    <input type="number" class="form-control" min-value="0" value="0" name="refund" id="kembalian" data-error="Hmm, harap diisi jumlah uang dengan valid" readonly required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </form>

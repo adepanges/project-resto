@@ -6,7 +6,7 @@ class Orders_model extends Resto_Model {
         $datatable_param = NULL,
         $table = 'orders',
         $orderable_field = [],
-        $fillable_field = ['table_id','customer_name','total_price','is_deleted','is_active','created_at'],
+        $fillable_field = ['table_id','customer_name','total_price','refund','pay','is_deleted','is_active','created_at'],
         $searchable_field = ['table_id','customer_name','total_price','is_deleted','is_active','created_at'];
 
     function get_byid($id)

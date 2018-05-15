@@ -40,6 +40,8 @@ class Cart extends Resto_Controller {
         $this->load->model('orders_model');
         $this->orders_model->upt_total_price($order_id);
         $res = $this->orders_model->upd([
+            'pay' => (int) $this->input->post('pay'),
+            'refund' => (int) $this->input->post('refund'),
             'is_active' => 0,
         ], $order_id);
 
