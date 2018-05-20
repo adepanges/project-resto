@@ -16,6 +16,10 @@ class App extends Resto_Controller {
                 redirect('user');
                 break;
 
+            case 2:
+                redirect('pimpinan');
+                break;
+
             default:
                 redirect('orders');
                 break;
