@@ -29,9 +29,10 @@ class App extends Resto_Controller {
     public function serve()
     {
         $this->_restrict_access('rest');
-
+        
         $data = [
             'table_id' => (int) $this->input->post('table_id'),
+            'user_id' => $this->profile['user_id'],
             'customer_name' => $this->input->post('customer_name'),
             'total_price' => 0,
             'is_deleted' => 0,

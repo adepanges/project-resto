@@ -35,16 +35,6 @@
                                     </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="dw-user-box">
-                                    <div class="u-text">
-                                        <p class="text-muted">Switch Role</p>
-                                        @foreach ($role as $key => $value_role)
-                                            <a class="role_option_detail btn" onclick="window.location = '{{ base_url('sso.php/auth/init/index/switch_role/'.md5($value_role['role_id'])) }}'">{{ $value_role['role_label'] }}</a>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </li>
                             <li><a href="{{ $logout_link }}"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                         <!-- /.dropdown-user -->

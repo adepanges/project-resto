@@ -84,6 +84,11 @@
                 Jl. Puri Kembangan, Kedoya Selatan<br>
                 Jakarta Barat
                 <hr>
+                Tanggal Bayar: <b>{{ $orders->pay_at }}</b><br>
+                Nama Pelanggan: <b>{{ $orders->customer_name }}</b><br>
+                Nama Waiters: <b>{{ $orders->waiters }}</b><br>
+                Kode Meja: <b>{{ $orders->table_code }}</b><br>
+                <hr>
 
                 @foreach ($orders_cart as $key_cart => $value_cart)
                 <div class="product-list detail">
@@ -118,6 +123,9 @@
                         <div class="product-price">{{ rupiah($orders->refund) }}</div>
                     </div>
                 <hr>
+                <p style="text-align: center;">
+                    <b><i>terimakasih atas kunjungan anda</i></b>
+                </p>
             </div>
             <div class="pagebreak"></div>
         </body>

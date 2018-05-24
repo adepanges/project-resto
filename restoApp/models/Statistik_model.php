@@ -12,7 +12,7 @@ class Statistik_model extends Resto_Model {
             	CONCAT(a.day,'/',a.month) AS periode,
             	(
             		SELECT SUM(total_price) AS income
-            		FROM orders WHERE DATE(created_at) = a.db_date
+            		FROM orders WHERE DATE(created_at) = a.db_date AND is_active = 0
             	) AS income
             FROM time_dimension a
             WHERE db_date BETWEEN ? AND ?", [$start_date, $end_date]);
@@ -30,7 +30,7 @@ class Statistik_model extends Resto_Model {
             	SELECT b.product_id, SUM(b.qty) AS qty, SUM(b.price) AS total
             	FROM orders a
             	LEFT JOIN orders_cart b ON a.order_id = b.order_id
-            	WHERE a.created_at BETWEEN ? AND ?
+            	WHERE a.is_active = 0 AND a.created_at BETWEEN ? AND ?
             	GROUP BY b.product_id
             ) b ON a.product_id = b.product_id
             WHERE a.status = 1", [$start_date, $end_date]);

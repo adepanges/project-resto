@@ -39,13 +39,21 @@ function loadDataCS(){
     .done(function( response ) {
         $('.preloader').fadeOut();
         $('#contentTableProduct').empty();
-        var product = response.product;
+        var product = response.product,
+            total_qty = 0,
+            total_price = 0;
 
         if(product.length > 0){
             product.forEach(function(val, index){
-                val.total = rupiah(val.total);
 
                 if(typeof val.qty == 'object') val.qty = 0;
+                total_qty += parseInt(val.qty);
+                val.total = parseInt(val.total);
+
+                if(!isNaN(val.total)) total_price += parseInt(val.total);
+                else val.total = 0;
+
+                val.total = rupiah(val.total);
 
                 var no = (index + 1);
                 var el = `<tr>
@@ -55,8 +63,19 @@ function loadDataCS(){
                     <td>${val.total}</td>
                 </td>`;
 
+
                 $('#contentTableProduct').append(el);
             });
+
+            total_price = rupiah(total_price);
+
+            var el = `<tr>
+                <td></td>
+                <td><b>Total</b></td>
+                <td><b>${total_qty}</b></td>
+                <td><b>${total_price}</b></td>
+            </td>`;
+            $('#contentTableProduct').append(el);
         }
 
         statistik.setData(response.data);
