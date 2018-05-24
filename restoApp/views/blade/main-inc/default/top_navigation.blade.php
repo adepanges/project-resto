@@ -7,11 +7,12 @@
                     <a class="logo" href="{{ base_url() }}">
                         <span class="hidden-xs">
                             <!--This is dark logo text-->
-                            <img src="{{ base_url('images/logo/logo.jpeg') }}" alt="home" class="dark-logo" width="80px" />
+                            <img src="{{ base_url('images/logo/logo.jpeg') }}" alt="home" class="dark-logo" width="90px" />
                             <!--This is light logo text-->
-                            <img src="{{ base_url('images/logo/logo.jpeg') }}" alt="home" class="light-logo" width="80px" />
+                            <img src="{{ base_url('images/logo/logo.jpeg') }}" alt="home" class="light-logo" width="90px" />
                          </span>
                      </a>
+                     <span style="font-size: 20px;">Mutiara Kafe</span>
                 </div>
                 <!-- /Logo -->
 
