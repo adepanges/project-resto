@@ -58,7 +58,7 @@
 @yield('content')
                 </div>
                 <!-- /.container-fluid -->
-                <footer class="footer text-center"> {{ date('Y') }} &copy; Dermeva </footer>
+                <footer class="footer text-center"> {{ date('Y') }} &copy; Mutiara Kafe </footer>
             </div>
             <!-- /#page-wrapper -->
         </div>
