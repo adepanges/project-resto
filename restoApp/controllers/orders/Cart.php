@@ -42,6 +42,8 @@ class Cart extends Resto_Controller {
         $res = $this->orders_model->upd([
             'pay' => (int) $this->input->post('pay'),
             'refund' => (int) $this->input->post('refund'),
+            'discount' => (int) $this->input->post('discount'),
+            'final_price' => (int) $this->input->post('final_price'),
             'pay_at' => date('Y-m-d H:i:s'),
             'is_active' => 0,
         ], $order_id);

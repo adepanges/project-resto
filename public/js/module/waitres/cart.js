@@ -44,7 +44,7 @@ function bayarPesanan(){
 
 $(document).ready(function(){
     $('#jumlah_uang').keyup(function(){
-        var price = parseInt($('#FormData [name=total_price]').val()),
+        var price = parseInt($('#FormData [name=final_price]').val()),
             uang = parseInt($(this).val());
 
         if(isNaN(price)) price = 0;
@@ -53,6 +53,17 @@ $(document).ready(function(){
         $('#kembalian').val(uang - price);
     });
 
+    $('#FormData [name=discount_input]').keyup(function() {
+        if($(this).val() == '') $(this).val('0');
+
+        var total_price = parseInt($('#FormData [name=total_price]').val())
+            diskon = total_price * parseInt($(this).val()) / 100,
+            final_price = total_price - diskon;
+
+        $('#FormData [name=final_price_label]').val(rupiah(final_price))
+        $('#FormData [name=final_price]').val(final_price)
+        $('#FormData [name=discount]').val(diskon)
+    })
 
     $('#btnSaveFormData').click(function(e){
         if(formValidator('#FormData')){
@@ -98,6 +109,7 @@ $(document).ready(function(){
                 },
                 function(isConfirm) {
                     if (isConfirm) {
+                        location.href = document.app.site_url;
                         window.open(document.app.site_url+'/orders/cetak/struk/'+data.order_id);
                     } else {
                         document.location.reload()

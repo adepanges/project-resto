@@ -80,9 +80,19 @@
     <div id="printArea">
         <body>
             <div class="side invoice">
-                <b>Mutiara Kafe</b><br>
-                Jl. Puri Kembangan, Kedoya Selatan<br>
-                Jakarta Barat
+                <table>
+                    <tr>
+                        <td>
+                            <img src="{{ base_url('images/logo/logo.jpeg') }}" alt="Home"
+                            style="width: 100px !important; height: 50px !important;"/>
+                        </td>
+                        <td style="font-size: 8px;">
+                            Jl. Puri Kembangan, <br>
+                            Kedoya Selatan, Jakarta Barat
+                        </td>
+                    </tr>
+                </table>
+
                 <hr>
                 Tanggal Bayar: <b>{{ $orders->pay_at }}</b><br>
                 Nama Pelanggan: <b>{{ $orders->customer_name }}</b><br>
@@ -111,6 +121,17 @@
                     <div class="product-name">Total Belanja</div>
                     <div class="product-qty"></div>
                     <div class="product-price">{{ rupiah($orders->total_price) }}</div>
+                </div>
+                <hr>
+                <div class="product-list detail">
+                    <div class="product-name">Potongan</div>
+                    <div class="product-qty"></div>
+                    <div class="product-price">{{ rupiah($orders->discount) }}</div>
+                </div>
+                <div class="product-list detail">
+                    <div class="product-name">Harga Akhir</div>
+                    <div class="product-qty"></div>
+                    <div class="product-price">{{ rupiah($orders->final_price) }}</div>
                 </div>
                 <div class="product-list detail">
                     <div class="product-name">Bayar</div>

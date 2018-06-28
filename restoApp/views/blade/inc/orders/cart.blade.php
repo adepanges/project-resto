@@ -89,13 +89,20 @@
                             <form id="FormData" data-toggle="validator" data-delay="100">
                                 <input type="hidden" name="order_id" value="{{ $orders->order_id }}">
                                 <input type="hidden" name="total_price" value="{{ $orders->total_price }}">
+                                <input type="hidden" name="final_price" value="{{ $orders->total_price }}">
+                                <input type="hidden" name="discount" value="0">
                                 <div class="form-group">
                                     <label for="recipient-name" class="control-label">Nama Pelanggan</label>
                                     <input type="text" class="form-control" value="{{ $orders->customer_name }}" readonly>
                                 </div>
                                 <div class="form-group">
+                                    <label for="recipient-name" class="control-label">Diskon</label>
+                                    <input type="number" class="form-control" name="discount_input" value="0"><br>
+                                    <i>Dalam persen</i>
+                                </div>
+                                <div class="form-group">
                                     <label for="recipient-name" class="control-label">Total Harga</label>
-                                    <input type="text" class="form-control" value="{{ rupiah($orders->total_price) }}" readonly>
+                                    <input type="text" name="final_price_label" class="form-control" value="{{ rupiah($orders->total_price) }}" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-name" class="control-label">Jumlah Uang</label>
